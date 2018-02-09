@@ -11,8 +11,9 @@ class Anagram
   end
 
   def anagram_check(test_word)
-    # if word_check(test_word)
-    #   return
+    if word_check(test_word)
+      return "not a word try again"
+    end
     @word = @word.downcase.split("").sort
     test_word = test_word.downcase.split("").sort
     if @word == test_word
