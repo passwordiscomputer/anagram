@@ -7,7 +7,7 @@ describe('#anagram') do
   end
   it("returns anagram even if casing is different") do
     word = Anagram.new("hello")
-    expect(word.anagram_check("oLleh")).to(eq('anagram'))
+    expect(word.anagram_check("olleh")).to(eq('anagram'))
   end
   it("returns 'not a word' if the word contains no vowels") do
     word = Anagram.new("hello")
@@ -16,5 +16,9 @@ describe('#anagram') do
   it("returns 'antigram' if not letters match") do
     word = Anagram.new("hi")
     expect(word.anagram_check("bye")).to(eq('antigram'))
+  end
+  it("returns 'anagram' if multiple words inputted are actually an anagram") do
+    word = Anagram.new("hello")
+    expect(word.anagram_check("he,l. ./.,/.lo")).to(eq('anagram'))
   end
 end
