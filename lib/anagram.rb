@@ -15,9 +15,12 @@ class Anagram
     if word_check(test_word)
       return "not a word try again"
     end
+    if test_word.scan(/[#{@word}]/).length == 0
+      return "antigram"
+    end
     #check whether or not word is anigram
     if @word.downcase.split("").sort == test_word.downcase.split("").sort
-      return 'anagram'
+      return "anagram"
     end
     'not an anagram'
   end
