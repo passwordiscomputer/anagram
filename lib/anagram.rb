@@ -4,8 +4,8 @@ class Anagram
   end
 
   def anagram_check(test_word)
-    @word = @word.split("").sort
-    test_word = test_word.split("").sort
+    @word = @word.downcase.split("").sort
+    test_word = test_word.downcase.split("").sort
     if @word == test_word
       return 'anagram'
     end
