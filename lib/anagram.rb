@@ -11,15 +11,15 @@ class Anagram
   end
 
   def anagram_check(test_word)
+    # check for vowels to see if it is infact a word
     if word_check(test_word)
       return "not a word try again"
     end
-    @word = @word.downcase.split("").sort
-    test_word = test_word.downcase.split("").sort
-    if @word == test_word
+    #check whether or not word is anigram
+    if @word.downcase.split("").sort == test_word.downcase.split("").sort
       return 'anagram'
     end
-    return 'not an anagram'
+    'not an anagram'
   end
 
 end

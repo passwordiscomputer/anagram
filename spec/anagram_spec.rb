@@ -13,4 +13,8 @@ describe('#anagram') do
     word = Anagram.new("hello")
     expect(word.anagram_check("hll")).to(eq('not a word try again'))
   end
+  it("returns 'antigram' if not letters match") do
+    word = Anagram.new("hi")
+    expect(word.anagram_check("bye")).to(eq('antigram'))
+  end
 end
